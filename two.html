@@ -1,18 +1,24 @@
+<?php header('Access-Control-Allow-Origin: *'); ?>
 <!DOCTYPE html>
-<html lang=&quot;en&quot;>
+<html lang="en">
 <head>
-    <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, minimum-scale=1&quot; />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     <title>RTGS_ENGLISH</title>
+	<script
+	  src="https://code.jquery.com/jquery-3.4.1.min.js"
+	  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	  crossorigin="anonymous">
+	</script>
 	</head>
 <body>
 
-<!--<button type=&quot;button&quot; onclick=&quot;changeLang()&quot;>Change Language to Finish</button> -->
+<!--<button type="button" onclick="changeLang()">Change Language to Finish</button> -->
 
 <!-- SNAPIN START -->
 	<style type='text/css'>
 	.embeddedServiceHelpButton .helpButton .uiButton {
 		background-color: #1B8419;
-		font-family: &quot;Salesforce Sans&quot;, sans-serif;
+		font-family: "Salesforce Sans", sans-serif;
 	}
 	.embeddedServiceHelpButton .helpButton .uiButton:focus {
 		outline: 1px solid #1B8169;
@@ -58,13 +64,13 @@
         embedded_svc.settings.disabledMinimizedText = 'Ingen ledig'; //(Defaults to Agent Offline)
 
 		//Do not create Contact
-		embedded_svc.settings.extraPrechatInfo = [{&quot;entityFieldMaps&quot;:
-		[{&quot;doCreate&quot;:false,&quot;doFind&quot;:false,&quot;fieldName&quot;:&quot;LastName&quot;,&quot;isExactMatch&quot;:true,&quot;label&quot;:&quot;Last Name&quot;},
-		{&quot;doCreate&quot;:false,&quot;doFind&quot;:false,&quot;fieldName&quot;:&quot;FirstName&quot;,&quot;isExactMatch&quot;:true,&quot;label&quot;:&quot;First Name&quot;},
-		{&quot;doCreate&quot;:false,&quot;doFind&quot;:true,&quot;fieldName&quot;:&quot;Email&quot;,&quot;isExactMatch&quot;:true,&quot;label&quot;:&quot;Email&quot;}]
-		,&quot;entityName&quot;:&quot;Contact&quot;,&quot;saveToTranscript&quot;:&quot;Contact&quot;,&quot;showOnCreate&quot;:false},
-		{&quot;entityName&quot;:&quot;Account&quot;,&quot;showOnCreate&quot;:false,&quot;saveToTranscript&quot;:&quot;Account&quot;,&quot;entityFieldMaps&quot;:[{&quot;isExactMatch&quot;:true,
-		&quot;fieldName&quot;:&quot;PersonEmail&quot;,&quot;doCreate&quot;:false,&quot;doFind&quot;:true,&quot;label&quot;:&quot;Email&quot;}]}];
+		embedded_svc.settings.extraPrechatInfo = [{"entityFieldMaps":
+		[{"doCreate":false,"doFind":false,"fieldName":"LastName","isExactMatch":true,"label":"Last Name"},
+		{"doCreate":false,"doFind":false,"fieldName":"FirstName","isExactMatch":true,"label":"First Name"},
+		{"doCreate":false,"doFind":true,"fieldName":"Email","isExactMatch":true,"label":"Email"}]
+		,"entityName":"Contact","saveToTranscript":"Contact","showOnCreate":false},
+		{"entityName":"Account","showOnCreate":false,"saveToTranscript":"Account","entityFieldMaps":[{"isExactMatch":true,
+		"fieldName":"PersonEmail","doCreate":false,"doFind":true,"label":"Email"}]}];
 
 		//Here you can set login values
 		embedded_svc.settings.prepopulatedPrechatFields = {
@@ -91,8 +97,8 @@
 				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I1X0000004CFaUAM_16a6df87b8c',
 				isOfflineSupportEnabled: true
 			}
-	  
-	  
+
+
 		);
 
 	};
